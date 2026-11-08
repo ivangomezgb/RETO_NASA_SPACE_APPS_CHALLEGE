@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTRA HEALTH AI | Mission Control</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="brand">
+            <span class="brand-icon">✦</span>
+            <div>
+                <h1>ASTRA HEALTH AI</h1>
+                <small>SPACE HEALTH MONITORING</small>
+            </div>
+        </div>
+
+        <div class="mission-status">
+            <span class="status-dot"></span>
+            MISSION ACTIVE
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">MISSION CONTROL / HEALTH SYSTEM</p>
+                <h2>Health Overview</h2>
+                <p>Monitoreo inteligente del estado de salud de la tripulación.</p>
+            </div>
+            <div class="astronaut">
+                ASTRONAUT 001
+            </div>
+        </section>
+
+        <section class="metrics">
+
+            <article class="metric-card">
+                <span>♥</span>
+                <p>Frecuencia cardíaca</p>
+                <h3 id="heartRate">72 <small>BPM</small></h3>
+                <small>Dato simulado</small>
+            </article>
+
+            <article class="metric-card">
+                <span>◉</span>
+                <p>Saturación de oxígeno</p>
+                <h3 id="oxygen">98 <small>%</small></h3>
+                <small>Dato simulado</small>
+            </article>
+
+            <article class="metric-card">
+                <span>◷</span>
+                <p>Horas de sueño</p>
+                <h3 id="sleep">7.5 <small>H</small></h3>
+                <small>Último registro</small>
+            </article>
+
+            <article class="metric-card">
+                <span>⌁</span>
+                <p>Actividad física</p>
+                <h3 id="activity">85 <small>%</small></h3>
+                <small>Índice ilustrativo</small>
+            </article>
+
+        </section>
+
+        <section class="analysis-card">
+            <div>
+                <p class="eyebrow">ARTIFICIAL INTELLIGENCE</p>
+                <h2>AI Health Analysis</h2>
+                <p id="aiMessage">
+                    Analizando los indicadores de salud...
+                </p>
+            </div>
+
+            <div class="risk-indicator" id="riskStatus">
+                ANALYZING
+            </div>
+        </section>
+
+        <section class="actions">
+            <h2>Health Monitoring</h2>
+
+            <button onclick="simulateData()">
+                Simular nuevos indicadores
+            </button>
+        </section>
+
+        <footer>
+            ASTRA HEALTH AI · SPACE HEALTH TECHNOLOGY
+            <p>Prototipo experimental. Datos simulados, no clínicos.</p>
+        </footer>
+
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

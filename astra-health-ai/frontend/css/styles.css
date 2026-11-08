@@ -1,0 +1,207 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080f1d;
+    color: #e8f0ff;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 7%;
+    border-bottom: 1px solid #1d3047;
+    background: #0c1728;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    color: #31d5f5;
+    font-size: 32px;
+}
+
+.brand h1 {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.brand small,
+.eyebrow {
+    color: #31d5f5;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.mission-status {
+    color: #51e3a2;
+    font-size: 12px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #51e3a2;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px 25px;
+}
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.welcome h2 {
+    font-size: 32px;
+    margin: 12px 0;
+}
+
+.welcome p {
+    color: #91a4bd;
+}
+
+.astronaut {
+    padding: 13px 18px;
+    border: 1px solid #24516b;
+    border-radius: 8px;
+    color: #31d5f5;
+    font-size: 12px;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.metric-card {
+    padding: 24px;
+    background: #101e31;
+    border: 1px solid #20344d;
+    border-radius: 12px;
+}
+
+.metric-card span {
+    color: #31d5f5;
+    font-size: 24px;
+}
+
+.metric-card p {
+    color: #91a4bd;
+    margin: 15px 0;
+    font-size: 13px;
+}
+
+.metric-card h3 {
+    font-size: 30px;
+}
+
+.metric-card h3 small {
+    font-size: 12px;
+    color: #91a4bd;
+}
+
+.metric-card > small {
+    color: #91a4bd;
+    display: block;
+    margin-top: 10px;
+}
+
+.analysis-card {
+    margin-top: 25px;
+    padding: 30px;
+    background: #101e31;
+    border: 1px solid #24516b;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.analysis-card h2 {
+    margin: 12px 0;
+}
+
+.analysis-card p {
+    color: #91a4bd;
+}
+
+.risk-indicator {
+    color: #51e3a2;
+    border: 1px solid #51e3a2;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.actions {
+    margin-top: 35px;
+}
+
+.actions button {
+    margin-top: 18px;
+    background: #087fbd;
+    color: white;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.actions button:hover {
+    background: #0ca6df;
+}
+
+footer {
+    margin-top: 55px;
+    text-align: center;
+    color: #58718e;
+    font-size: 11px;
+}
+
+footer p {
+    margin-top: 8px;
+}
+
+@media (max-width: 800px) {
+    .metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .welcome {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .analysis-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
