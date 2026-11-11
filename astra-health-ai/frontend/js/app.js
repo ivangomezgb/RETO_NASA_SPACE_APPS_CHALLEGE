@@ -97,3 +97,57 @@ function analyzeHealth(heart, oxygen, sleep) {
             "No se detectaron alertas según las reglas configuradas. Esto no garantiza que el astronauta esté sano.";
     }
 }
+
+
+async function analyzeWithAI() {
+
+    const message = document.getElementById("aiMessage");
+    const status = document.getElementById("riskStatus");
+
+    try {
+
+        status.innerText = "ANALYZING...";
+        message.innerText = "El modelo está analizando los indicadores.";
+
+        const response = await fetch(
+            "http://127.0.0.1:8000/api/v1/health/analyze"
+        );
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(
+                result.detail || "No fue posible analizar los datos."
+            );
+        }
+
+        const analysis = result.analysis;
+
+        if (analysis.is_anomaly) {
+
+            status.innerText = "UNUSUAL PATTERN";
+            status.style.color = "#ffb454";
+            status.style.borderColor = "#ffb454";
+
+        } else {
+
+            status.innerText = "USUAL PATTERN";
+            status.style.color = "#51e3a2";
+            status.style.borderColor = "#51e3a2";
+        }
+
+        message.innerText =
+            analysis.message +
+            " Indicadores más inusuales: " +
+            analysis.most_unusual_indicators.join(", ") +
+            ". Puntuación: " +
+            analysis.anomaly_score;
+
+    } catch (error) {
+
+        console.error("Error en el análisis:", error);
+
+        status.innerText = "AI ANALYSIS ERROR";
+        message.innerText = error.message;
+    }
+}
